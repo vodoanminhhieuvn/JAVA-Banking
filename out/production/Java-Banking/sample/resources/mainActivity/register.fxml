@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="558.0" prefWidth="502.0" style="-fx-background-color: white; -fx-background-radius: 0 11 11 0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.registerController">
+   <children>
+      <VBox layoutX="64.0" layoutY="89.0" prefHeight="323.0" prefWidth="385.0">
+         <children>
+            <JFXTextField fx:id="nameInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Name">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="emailInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Email">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="phoneInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Phone">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXPasswordField fx:id="passwordInput" focusColor="#4ffbca" labelFloat="true" promptText="Password">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+            <JFXPasswordField fx:id="confirmInput" focusColor="#4ffbca" labelFloat="true" promptText="Confirm password">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </JFXPasswordField>
+         </children>
+      </VBox>
+      <Label layoutX="64.0" layoutY="42.0" text="Register">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="signUpBtn" layoutX="187.0" layoutY="435.0" onMouseClicked="#handleMouseEvent" prefHeight="42.0" prefWidth="139.0" style="-fx-background-radius: 1em; -fx-background-color: orange;" text="Sign up" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="176.0" />
+   </children>
+</AnchorPane>

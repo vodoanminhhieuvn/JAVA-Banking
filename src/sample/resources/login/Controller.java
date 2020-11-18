@@ -1,4 +1,4 @@
-package sample;
+package sample.resources.login;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -87,7 +87,6 @@ public class Controller implements Initializable {
         try {
             response = client.newCall(request).execute();
         } catch (Exception exception) {
-            Main.changeToMainView();
             AlertBox.display("Connection problem", "Please check your internet connection");
             return;
         }

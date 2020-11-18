@@ -1,4 +1,4 @@
-package sample.resources.mainActivity;
+package sample;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -13,6 +13,8 @@ import okhttp3.Response;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import java.util.Objects;
 
 public class Main extends Application {
     static Stage window;
@@ -66,10 +68,11 @@ public class Main extends Application {
 
         Platform.setImplicitExit(false);
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/resources/login/login.fxml"));
+        Parent root = FXMLLoader
+                .load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample/resources/login/login.fxml")));
         scene = new Scene(root);
 
-        mainRoot = FXMLLoader.load(getClass().getResource("resources/mainActivity/Main.fxml"));
+        mainRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample/resources/mainActivity/Main.fxml")));
         mainScene = new Scene(mainRoot);
 
         dragView(root, primaryStage);

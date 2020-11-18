@@ -5,21 +5,22 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="554.0" prefWidth="792.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainCotroller">
+<AnchorPane prefHeight="554.0" prefWidth="792.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.mainActivity.mainCotroller">
    <children>
-      <AnchorPane prefHeight="554.0" prefWidth="283.0" style="-fx-background-color: #393351; -fx-background-radius: 10 0 0 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="556.0" prefWidth="291.0" style="-fx-background-color: white; -fx-background-radius: 10 0 0 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutY="158.0" prefHeight="398.0" prefWidth="289.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="158.0">
+            <VBox layoutY="158.0" prefHeight="398.0" prefWidth="289.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="158.0">
                <children>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="294.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -27,11 +28,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -39,11 +40,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -51,11 +52,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -65,17 +66,18 @@
                   </Button>
                </children>
             </VBox>
-            <Pane layoutY="95.0" prefHeight="67.0" prefWidth="291.0" style="-fx-background-color: #68479F; -fx-background-radius: 1em;">
+            <Pane layoutX="-1.0" layoutY="70.0" prefHeight="67.0" prefWidth="291.0" style="-fx-background-color: #5c6e91;">
                <children>
-                  <Label alignment="CENTER" layoutX="90.0" layoutY="23.0" text="HOME PAGE" textFill="WHITE">
+                  <Label alignment="CENTER" layoutX="90.0" layoutY="23.0" text="HOME PAGE" textFill="#0d0d0d">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
+            <HBox layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="117.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="291.0" layoutY="-2.0" prefHeight="558.0" prefWidth="451.0" style="-fx-background-color: #2F2B43; -fx-background-radius: 0 11 11 0;" />
+      <AnchorPane fx:id="tabView" layoutX="301.0" prefHeight="558.0" prefWidth="502.0" style="-fx-background-color: white; -fx-background-radius: 0 11 11 0;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

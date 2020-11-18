@@ -1,4 +1,4 @@
-package sample;
+package sample.resources.mainActivity;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +18,10 @@ public class mainCotroller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Fuck you 9000");
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("resources/mainActivity/register.fxml"));
+            root = FXMLLoader.load(getClass().getResource("register.fxml"));
             tabView.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();

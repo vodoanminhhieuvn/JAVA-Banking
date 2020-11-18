@@ -10,17 +10,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="554.0" prefWidth="792.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainCotroller">
+<AnchorPane prefHeight="554.0" prefWidth="792.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.mainActivity.mainCotroller">
    <children>
       <AnchorPane prefHeight="556.0" prefWidth="291.0" style="-fx-background-color: white; -fx-background-radius: 10 0 0 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox layoutY="158.0" prefHeight="398.0" prefWidth="289.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="158.0">
                <children>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="294.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="294.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -28,11 +28,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -40,11 +40,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -52,11 +52,11 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../CSS/fullpackstyling.css" text="Register">
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Icons/icons8-membership-card-96.png" />
+                              <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
                         </ImageView>
                      </graphic>
