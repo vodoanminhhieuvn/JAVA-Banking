@@ -1,49 +1,37 @@
-package sample;
-
-import java.io.IOException;
-import java.lang.Object;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
+package sample.resources.mainActivity;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 public class Main extends Application {
     static Stage window;
     static Scene scene, mainScene;
     static Parent mainRoot;
     static double xOffset, yOffset;
-    boolean checkInternetConnection = false;
+
+    public OkHttpClient client = new OkHttpClient();
+    public JSONParser parseJSON = new JSONParser();
+    public JSONObject jsonObject;
+    public JSONObject res;
+    public JSONArray messageJSON;
+    public String resJSON;
+    public String catchJsonObject;
+    public Request request;
+    public Response response;
+    // boolean checkInternetConnection = false;
 
     // TODO: Finishing up multiThreading
-
-    // HttpURLConnection connection;
-    // Task task2;
-
-    // public void callNetwork() throws IOException {
-
-    // System.out.println("Good999999999999999999999999999999");
-    // try {
-    // URL url = new URL("http://www.google.com");
-    // connection = (HttpURLConnection) url.openConnection();
-    // connection.connect();
-    // System.out.println(connection.getInputStream());
-
-    // } catch (Exception e) {
-    // connection.disconnect();
-    // System.out.println("Disconnected");
-
-    // }
-    // }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -78,17 +66,17 @@ public class Main extends Application {
 
         Platform.setImplicitExit(false);
 
-        Parent root = FXMLLoader.load(getClass().getResource("resources/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sample/resources/login/login.fxml"));
         scene = new Scene(root);
 
-        mainRoot = FXMLLoader.load(getClass().getResource("resources/Main.fxml"));
+        mainRoot = FXMLLoader.load(getClass().getResource("resources/mainActivity/Main.fxml"));
         mainScene = new Scene(mainRoot);
 
         dragView(root, primaryStage);
 
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        // primaryStage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
 
         primaryStage.show();
@@ -113,8 +101,8 @@ public class Main extends Application {
 
     public static void changeToMainView() {
         dragView(mainRoot, window);
+        window.setTitle("Banking");
         mainScene.setFill(Color.TRANSPARENT);
         window.setScene(mainScene);
-
     }
 }
