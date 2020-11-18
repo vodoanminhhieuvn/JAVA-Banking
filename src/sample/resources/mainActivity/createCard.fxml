@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="558.0" prefWidth="502.0" style="-fx-background-color: white; -fx-background-radius: 0 11 11 0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.mainActivity.createCardController">
+    <children>
+        <VBox layoutX="64.0" layoutY="89.0" prefHeight="278.0" prefWidth="385.0">
+            <children>
+                <JFXTextField fx:id="IDInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Card ID">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </JFXTextField>
+                <JFXTextField fx:id="PINInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="PIN">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </JFXTextField>
+                <JFXTextField fx:id="emailInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Email">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </JFXTextField>
+            <JFXTextField fx:id="balanceInput" focusColor="#4ffbca" labelFloat="true" prefHeight="27.0" prefWidth="353.0" promptText="Balance" />
+            </children>
+        </VBox>
+        <Label layoutX="64.0" layoutY="42.0" text="Create Card">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="createCardBtn" layoutX="187.0" layoutY="374.0" onMouseClicked="#handleMouseEvent" prefHeight="42.0" prefWidth="139.0" style="-fx-background-radius: 1em; -fx-background-color: orange;" text="Create card" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="176.0" />
+    </children>
+</AnchorPane>

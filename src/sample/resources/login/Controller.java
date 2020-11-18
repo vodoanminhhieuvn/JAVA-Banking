@@ -109,7 +109,6 @@ public class Controller implements Initializable {
             } catch (Exception e) {
                 System.out.println(resJSON);
                 AlertBox.display("Alert", resJSON);
-
             }
 
             // System.out.println(res);

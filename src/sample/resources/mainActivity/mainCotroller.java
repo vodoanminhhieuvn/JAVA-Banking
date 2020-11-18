@@ -1,9 +1,11 @@
 package sample.resources.mainActivity;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -14,12 +16,16 @@ import java.util.ResourceBundle;
 public class mainCotroller implements Initializable {
 
     @FXML
+    Button registerViewBtn, createCardViewBtn;
+
+    @FXML
     AnchorPane tabView;
+
+    Parent root;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Fuck you 9000");
-        Parent root;
+
         try {
             root = FXMLLoader.load(getClass().getResource("register.fxml"));
             tabView.getChildren().setAll(root);
@@ -42,7 +48,23 @@ public class mainCotroller implements Initializable {
 
     @FXML
     public void changeAnchorView(MouseEvent event) {
+        if (event.getSource() == registerViewBtn) {
+            try {
+                root = FXMLLoader.load(getClass().getResource("register.fxml"));
+                tabView.getChildren().setAll(root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
+        if (event.getSource() == createCardViewBtn) {
+            try {
+                root = FXMLLoader.load(getClass().getResource("createCard.fxml"));
+                tabView.getChildren().setAll(root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

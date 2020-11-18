@@ -11,6 +11,7 @@ import javafx.scene.input.MouseEvent;
 import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import sample.AlertBox;
 import sample.Main;
@@ -18,50 +19,61 @@ import sample.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class registerController implements Initializable {
-    @FXML
-    JFXTextField nameInput, emailInput, phoneInput;
+public class createCardController implements Initializable {
 
     @FXML
-    JFXPasswordField passwordInput, confirmInput;
+    JFXTextField IDInput, PINInput, emailInput, balanceInput;
 
     @FXML
-    JFXButton signUpBtn;
+    JFXButton createCardBtn;
 
     private Main main = new Main();
+    private Boolean emailNeeded = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        phoneInput.textProperty().addListener((arg, oldVal, newVal) -> {
-            if (phoneInput.getText().length() > 16) {
-                AlertBox.display("Phone number Limit", "Phone number limit: 16");
-                phoneInput.setText(phoneInput.getText().substring(0, phoneInput.getText().length() - 1));
+        IDInput.textProperty().addListener((arg, oldVal, newVal) -> {
+            if (IDInput.getText().length() > 16) {
+                AlertBox.display("Phone number Limit", "ID number limit: 16");
+                IDInput.setText(IDInput.getText().substring(0, IDInput.getText().length() - 1));
             }
 
-            if (!phoneInput.getText().matches("[0-9]*")) {
-                AlertBox.display("Invalid phone number", "Phone number does not contain words");
-                phoneInput.setText(phoneInput.getText().substring(0, phoneInput.getText().length() - 1));
+            if (!IDInput.getText().matches("[0-9]*")) {
+                AlertBox.display("Invalid phone number", "ID number does not contain words");
+                IDInput.setText(IDInput.getText().substring(0, IDInput.getText().length() - 1));
+            }
+        });
+
+        PINInput.textProperty().addListener((arg, oldVal, newVal) -> {
+            if (PINInput.getText().length() > 6) {
+                AlertBox.display("Phone number Limit", "PIN number limit: 6");
+                PINInput.setText(PINInput.getText().substring(0, PINInput.getText().length() - 1));
+            }
+
+            if (!PINInput.getText().matches("[0-9]*")) {
+                AlertBox.display("Invalid phone number", "PIN number does not contain words");
+                PINInput.setText(PINInput.getText().substring(0, PINInput.getText().length() - 1));
             }
         });
     }
 
-    private void SignUp() {
+    private void createCard() {
         main.jsonObject = new JSONObject();
         try {
-            main.jsonObject.put("name", nameInput.getText());
+            main.jsonObject.put("_id", IDInput.getText());
+            main.jsonObject.put("PIN", PINInput.getText());
             main.jsonObject.put("email", emailInput.getText());
-            main.jsonObject.put("phone", phoneInput.getText());
-            main.jsonObject.put("password1", passwordInput.getText());
-            main.jsonObject.put("password2", confirmInput.getText());
+            main.jsonObject.put("balance", balanceInput.getText());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         MediaType mediaType = MediaType.parse("application/json");
         RequestBody body = RequestBody.create(mediaType, main.jsonObject.toString());
-        main.request = new Request.Builder().url("http://localhost:9000/api/user/register").post(body).build();
+        main.request = new Request.Builder().url("http://localhost:9000/api/user/card-create").post(body).build();
 
         // ? Check internet connection
+        // ! Create in main function
         try {
             main.response = main.client.newCall(main.request).execute();
         } catch (Exception exception) {
@@ -72,23 +84,27 @@ public class registerController implements Initializable {
 
         // ! @param response can be only used for one time only
 
-        // ? Login
+        // ? Create Card
         try {
             // ! After this response will be deleted
             // ! JSONArray must be array when parsing
-            // ! When we receive only one object we should use phoneInputing
+            // ! When we receive only one object we should use string
             // ! When we receive list of objects we should jsonArray
 
             main.resJSON = main.response.body().string();
             try {
                 main.res = (JSONObject) main.parseJSON.parse(main.resJSON);
-                main.catchJsonObject = (String) main.res.get("user");
-                System.out.println("Hello " + main.catchJsonObject);
+                // main.messageJSON = (JSONArray) main.res.get("error");
+                main.catchJsonObject = (String) main.res.get("cardId");
+                System.out.println(main.resJSON);
                 AlertBox.display("Alert", main.catchJsonObject);
             } catch (Exception e) {
                 System.out.println(main.resJSON);
+                if (main.resJSON.equals("User is not exist")) {
+                    emailNeeded = true;
+                    System.out.println(emailNeeded);
+                }
                 AlertBox.display("Alert", main.resJSON);
-
             }
 
             // System.out.println(res);
@@ -102,8 +118,8 @@ public class registerController implements Initializable {
 
     @FXML
     public void handleMouseEvent(MouseEvent event) {
-        if (event.getSource() == signUpBtn) {
-            SignUp();
+        if (event.getSource() == createCardBtn) {
+            createCard();
         }
     }
 

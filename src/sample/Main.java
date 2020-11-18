@@ -68,11 +68,12 @@ public class Main extends Application {
 
         Platform.setImplicitExit(false);
 
-        Parent root = FXMLLoader
-                .load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample/resources/login/login.fxml")));
+        Parent root = FXMLLoader.load(
+                Objects.requireNonNull(getClass().getClassLoader().getResource("sample/resources/login/login.fxml")));
         scene = new Scene(root);
 
-        mainRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("sample/resources/mainActivity/Main.fxml")));
+        mainRoot = FXMLLoader.load(Objects
+                .requireNonNull(getClass().getClassLoader().getResource("sample/resources/mainActivity/Main.fxml")));
         mainScene = new Scene(mainRoot);
 
         dragView(root, primaryStage);

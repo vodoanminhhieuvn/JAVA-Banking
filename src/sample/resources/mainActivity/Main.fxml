@@ -16,7 +16,7 @@
          <children>
             <VBox layoutY="158.0" prefHeight="398.0" prefWidth="289.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="158.0">
                <children>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="66.0" prefWidth="294.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
+                  <Button fx:id="registerViewBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#changeAnchorView" prefHeight="66.0" prefWidth="294.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -28,9 +28,9 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
+                  <Button fx:id="createCardViewBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#changeAnchorView" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Create card">
                      <graphic>
-                        <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="62.0" fitWidth="54.0" onMouseClicked="#changeAnchorView" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Icons/icons8-membership-card-96.png" />
                            </image>
