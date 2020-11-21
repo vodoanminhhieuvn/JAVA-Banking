@@ -6,3 +6,4 @@ Java App to help user connect to Banking System
 - Java JDK 11
 - JFoenix 9.0.10
 - okHttp 4.2.1
+- simploe json 1.1.1
