@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="591.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.login.cardLoginController">
+    <children>
+        <AnchorPane layoutX="-1.0" layoutY="1.0" prefHeight="591.0" prefWidth="700.0" style="-fx-background-color: g;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+            <children>
+                <AnchorPane fx:id="cardLoginPane" layoutX="281.0" layoutY="13.0" maxWidth="405.0" prefHeight="567.0" prefWidth="405.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="281.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="13.0">
+                    <children>
+                        <Label layoutX="69.0" layoutY="56.0" text="Sign In" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="239.0" AnchorPane.topAnchor="56.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="cardIDInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="100.0" prefHeight="27.0" prefWidth="248.0" promptText="Card ID" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
+                        <JFXPasswordField fx:id="PINInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="193.0" prefHeight="27.0" prefWidth="248.0" promptText="PIN" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
+                        <JFXButton fx:id="btnSignIn" buttonType="RAISED" layoutX="166.0" layoutY="261.0" maxWidth="100.0" onMouseClicked="#logIn" prefHeight="42.0" prefWidth="92.0" ripplerFill="WHITE" style="-fx-background-radius: 1em; -fx-background-color: orange;" text="Sign In" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="101.0">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="changeViewButton" layoutX="54.0" onMouseClicked="#handleViewChange" prefHeight="34.0" prefWidth="138.0" ripplerFill="WHITE" text="Change to Staff" AnchorPane.topAnchor="0.0">
+                            <graphic>
+                                <Circle fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+                <AnchorPane layoutY="-11.0" prefHeight="610.0" prefWidth="318.0" style="-fx-background-color: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="-8.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-11.0">
+                    <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="80.0" layoutY="-6.0" prefHeight="601.0" prefWidth="226.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Wanker Baking" textFill="WHITE">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Go fuck yourself" textFill="WHITE">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                                <Label text="This is shit" textFill="WHITE">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

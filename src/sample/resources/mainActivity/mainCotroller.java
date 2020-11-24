@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 public class mainCotroller implements Initializable {
 
     @FXML
-    Button registerViewBtn, createCardViewBtn;
+    Button registerViewBtn, createCardViewBtn, sendMoneyViewBtn;
 
     @FXML
     AnchorPane tabView;
@@ -60,6 +60,15 @@ public class mainCotroller implements Initializable {
         if (event.getSource() == createCardViewBtn) {
             try {
                 root = FXMLLoader.load(getClass().getResource("createCard.fxml"));
+                tabView.getChildren().setAll(root);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (event.getSource() == sendMoneyViewBtn) {
+            try {
+                root = FXMLLoader.load(getClass().getResource("sendMoney.fxml"));
                 tabView.getChildren().setAll(root);
             } catch (IOException e) {
                 e.printStackTrace();

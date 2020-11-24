@@ -40,7 +40,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Register">
+                  <Button fx:id="sendMoneyViewBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#changeAnchorView" prefHeight="59.0" prefWidth="289.0" styleClass="button1" stylesheets="@../../CSS/fullpackstyling.css" text="Send Money">
                      <graphic>
                         <ImageView fitHeight="62.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>

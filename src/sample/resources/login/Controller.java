@@ -1,14 +1,20 @@
 package sample.resources.login;
 
+import sample.Main;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import okhttp3.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -18,6 +24,7 @@ import sample.Main;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -43,6 +50,14 @@ public class Controller implements Initializable {
     @FXML
     private ImageView btnBack;
 
+    private Stage primaryStage;
+    private Parent root;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
     @FXML
     public void handleSignIn(MouseEvent event) throws IOException {
         Login();
@@ -56,7 +71,8 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void handleViewChange(MouseEvent event) throws IOException {
+    public void handleViewChange(MouseEvent event) {
+        Main.changeToCardLoginView();
     }
 
     @FXML
@@ -64,10 +80,6 @@ public class Controller implements Initializable {
         if (event.getSource() == btnClose) {
             System.exit(0);
         }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
     }
 
     public void Login() throws IOException {

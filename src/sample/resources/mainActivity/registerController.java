@@ -88,7 +88,6 @@ public class registerController implements Initializable {
             } catch (Exception e) {
                 System.out.println(main.resJSON);
                 AlertBox.display("Alert", main.resJSON);
-
             }
 
             // System.out.println(res);

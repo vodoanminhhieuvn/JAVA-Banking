@@ -39,7 +39,7 @@
                         <Insets left="10.0" right="10.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton layoutX="54.0" prefHeight="34.0" prefWidth="138.0" ripplerFill="WHITE" text="Change to ATM" AnchorPane.topAnchor="0.0">
+                  <JFXButton fx:id="changeViewButton" layoutX="54.0" onMouseClicked="#handleViewChange" prefHeight="34.0" prefWidth="138.0" ripplerFill="WHITE" text="Change to ATM" AnchorPane.topAnchor="0.0">
                      <graphic>
                         <Circle fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
                      </graphic>
