@@ -48,6 +48,7 @@ public class sendMoneyController implements Initializable {
     @FXML
     public void sendMoney() {
         JSONObject jsonObject = new JSONObject();
+
         try {
             jsonObject.put("cardId", IDInput.getText());
             jsonObject.put("fund", fundInput.getText());

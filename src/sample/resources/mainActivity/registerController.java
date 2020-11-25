@@ -3,15 +3,14 @@ package sample.resources.mainActivity;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
-import okhttp3.MediaType;
-import okhttp3.Request;
-import okhttp3.RequestBody;
+import okhttp3.Response;
+
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import sample.AlertBox;
 import sample.Main;
 
@@ -27,8 +26,6 @@ public class registerController implements Initializable {
 
     @FXML
     JFXButton signUpBtn;
-
-    private Main main = new Main();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,56 +43,39 @@ public class registerController implements Initializable {
     }
 
     private void SignUp() {
-        main.jsonObject = new JSONObject();
+        JSONObject jsonObject = new JSONObject();
         try {
-            main.jsonObject.put("name", nameInput.getText());
-            main.jsonObject.put("email", emailInput.getText());
-            main.jsonObject.put("phone", phoneInput.getText());
-            main.jsonObject.put("password1", passwordInput.getText());
-            main.jsonObject.put("password2", confirmInput.getText());
+            jsonObject.put("name", nameInput.getText());
+            jsonObject.put("email", emailInput.getText());
+            jsonObject.put("phone", phoneInput.getText());
+            jsonObject.put("password1", passwordInput.getText());
+            jsonObject.put("password2", confirmInput.getText());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, main.jsonObject.toString());
-        main.request = new Request.Builder().url("http://localhost:9000/api/user/register").post(body).build();
+        String Url = "http://localhost:9000/api/user/register";
+        String strJSon;
+        String catchJsonObject;
 
-        // ? Check internet connection
         try {
-            main.response = main.client.newCall(main.request).execute();
-        } catch (Exception exception) {
-            Main.changeToMainView();
-            AlertBox.display("Connection problem", "Please check your internet connection");
-            return;
-        }
+            Response response = Main.requestAPI(jsonObject, Url, Main.getTokenApi());
+            strJSon = response.body().string();
 
-        // ! @param response can be only used for one time only
-
-        // ? Login
-        try {
-            // ! After this response will be deleted
-            // ! JSONArray must be array when parsing
-            // ! When we receive only one object we should use phoneInputing
-            // ! When we receive list of objects we should jsonArray
-
-            main.resJSON = main.response.body().string();
             try {
-                main.res = (JSONObject) main.parseJSON.parse(main.resJSON);
-                main.catchJsonObject = (String) main.res.get("user");
-                System.out.println("Hello " + main.catchJsonObject);
-                AlertBox.display("Alert", main.catchJsonObject);
-            } catch (Exception e) {
-                System.out.println(main.resJSON);
-                AlertBox.display("Alert", main.resJSON);
+                JSONParser parseJson = new JSONParser();
+                JSONObject jsonMap = (JSONObject) parseJson.parse(strJSon);
+                catchJsonObject = (String) jsonMap.get("user");
+                System.out.println("Hello " + catchJsonObject);
+            } catch (Exception cause) {
+                System.out.println(cause);
+                System.err.println(strJSon);
+                AlertBox.display("Alert", strJSon);
             }
 
-            // System.out.println(res);
-            // System.out.println(res.get("success"));
-            // System.out.println("--------------------------------");
-            // System.out.println(messageJSON);
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (Exception cause) {
+            System.out.println(cause);
+            // AlertBox.display("Alert", strJSon);
         }
     }
 

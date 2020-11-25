@@ -21,9 +21,9 @@
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
-                        <JFXTextField fx:id="cardIDInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="100.0" prefHeight="27.0" prefWidth="248.0" promptText="Card ID" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
-                        <JFXPasswordField fx:id="PINInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="193.0" prefHeight="27.0" prefWidth="248.0" promptText="PIN" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
-                        <JFXButton fx:id="btnSignIn" buttonType="RAISED" layoutX="166.0" layoutY="261.0" maxWidth="100.0" onMouseClicked="#logIn" prefHeight="42.0" prefWidth="92.0" ripplerFill="WHITE" style="-fx-background-radius: 1em; -fx-background-color: orange;" text="Sign In" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="101.0">
+                        <JFXTextField fx:id="cardIDInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="100.0" onKeyPressed="#loginEnterClick" prefHeight="27.0" prefWidth="248.0" promptText="Card ID" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
+                        <JFXPasswordField fx:id="PINInput" focusColor="#4ffbca" labelFloat="true" layoutX="88.0" layoutY="193.0" onKeyPressed="#loginEnterClick" prefHeight="27.0" prefWidth="248.0" promptText="PIN" unFocusColor="BLACK" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="23.0" />
+                        <JFXButton fx:id="btnSignIn" buttonType="RAISED" layoutX="166.0" layoutY="261.0" maxWidth="100.0" onMouseClicked="#handleSignIn" prefHeight="42.0" prefWidth="92.0" ripplerFill="WHITE" style="-fx-background-radius: 1em; -fx-background-color: orange;" text="Sign In" AnchorPane.leftAnchor="166.0" AnchorPane.rightAnchor="101.0">
                             <font>
                                 <Font name="System Bold" size="14.0" />
                             </font>

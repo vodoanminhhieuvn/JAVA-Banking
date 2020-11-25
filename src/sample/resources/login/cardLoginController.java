@@ -4,9 +4,12 @@ import sample.AlertBox;
 import sample.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import okhttp3.Response;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -56,7 +59,19 @@ public class cardLoginController implements Initializable {
     }
 
     @FXML
-    public void logIn(MouseEvent event) {
+    public void loginEnterClick(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            LogIn();
+        }
+    }
+
+    @FXML
+    public void handleSignIn(MouseEvent event) throws IOException {
+        LogIn();
+    }
+
+    @FXML
+    public void LogIn() {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("cardId", cardIDInput.getText());
@@ -87,7 +102,6 @@ public class cardLoginController implements Initializable {
 
         } catch (Exception cause) {
             System.out.println(cause);
-            // AlertBox.display("Alert", strJSon);
         }
 
     }

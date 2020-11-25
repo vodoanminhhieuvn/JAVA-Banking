@@ -45,7 +45,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        // TODO: MultiTasking
+        // TODO: MultiTasking Network checking
 
         // task = new Task<Void>() {
         // @Override
@@ -89,6 +89,7 @@ public class Main extends Application {
 
         loginScene = new Scene(cardLoginRoot);
         cardScene = new Scene(userLoginRoot);
+
         // primaryStage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("Login");
